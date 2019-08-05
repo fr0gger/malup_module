@@ -9,15 +9,15 @@ import re
 #import sys
 #import lief
 import pefile
-import datetime
+#import datetime
 
 #import json as JSON
 import module.config
 #from module.antiav import get_av_evasion
 #from module.antiav import get_av_strings
 #from module.antiav import get_pesize
-#from module.antivm import antivm_inst
-#from module.antivm import get_vm
+from module.antivm import antivm_inst
+from module.antivm import get_vm
 #from module.disas import check_iat
 #from module.disas import fake_jump
 #from module.disas import flow_redirect
@@ -26,9 +26,9 @@ import module.config
 #from module.network_evasion import get_url, get_ip
 from module.packer import get_peid
 from module.packer import possible_packing
-#from module.pe_info import check_tls
+from module.pe_info import check_tls
 #from module.pe_info import display_resources
-#from module.pe_info import get_antidebug
+from module.pe_info import get_antidebug
 #from module.pe_info import get_hash
 #from module.pe_info import get_impfuzzy
 #from module.pe_info import get_info
@@ -38,8 +38,6 @@ from module.packer import possible_packing
 from module.pe_info import get_sec
 from module.strings import get_strings
 from module.utils import yarascan
-#from module.virusapi import get_vt
-#from module.icon_extractor import extract_icon
 
 from fame.core.module import ProcessingModule
 
@@ -140,33 +138,32 @@ class unprotect(ProcessingModule):
             dbgtable = False
 
 
-        self.results = {
+        self.results = {'EXPLOIT_MITIGATION':{
             'ASLR': aslr_check,
             'DEP': dep_check,
-            'SEH': SEH,
-            'CFG': CFG
-            #
-            # 'PACKER_DETECTION': {
-            #     'PEID': peid_detect,
-            #     'SECTIONS_ENTROPY': entropysec,
-            #     'EMPTY_SECTION': emptysection,
-            #     'EP_OUTSIDE': entryout,
-            #     'YARA_PACKER': matches,
-            #     'PE_SECTION': sectiontab
-            # },
-            #
-            # 'ANTI_SANDBOX': {
-            #     'ANTI_SANBOX': trk,
-            #     'ANTIVM_INSTRUCTIONS': count,
-            #     'YARA_ANTI_SANDBOX': matches
-            # },
-            #
-            # 'ANTI_DEBUGGING': {
-            #     'TLS_CALLBACK': tls,
-            #     'ANTI_DEBUGGING_API': dbgtable,
-            #     'YARA_ANTI_DEBUGGING': matchesdb
-            # }
+            'SEH': seh_check,
+            'CFG': cfg_check},
 
+            'PACKER_DETECTION': {
+                'PEID': peid_detect,
+                'SECTIONS_ENTROPY': entropysec,
+                'EMPTY_SECTION': emptysection,
+                'EP_OUTSIDE': entryout,
+                'YARA_PACKER': matches,
+                'PE_SECTION': sectiontab
+            },
+
+            'ANTI_SANDBOX': {
+                'ANTI_SANBOX': trk,
+                'ANTIVM_INSTRUCTIONS': count,
+                'YARA_ANTI_SANDBOX': matches
+            },
+
+            'ANTI_DEBUGGING': {
+                'TLS_CALLBACK': tls,
+                'ANTI_DEBUGGING_API': dbgtable,
+                'YARA_ANTI_DEBUGGING': matchesdb
+            }
         }
 
         print self.results
