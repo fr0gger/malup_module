@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title><div class="col-md-12">
+
     <div class="card">
         <div class="header">
             <h4 class="title">SuperPEHasher</h4>
@@ -11,22 +7,43 @@
         <div class="content">
           <div>
 
-            <label>Scan Date</label>
+              <label>SHA512</label>
+            <div class="labeled_content">
+                {{results['SHA512']}}
+            </div>
+            <label>Import Hash</label>
             <div class="labeled_content">
                 {{results['IMPHASH']}}
             </div>
-              <div class="row">
-                    <div class="col-sm-2 text-right"><strong>MD5</strong></div>
-                    <div class="col-sm-10">{{results['SHA512']}}</div>
-                </div>
-
+              <label>SSDEEP</label>
+            <div class="labeled_content">
+                {{results['SSDEEP']}}
+            </div>
+              <label>ImpFuzzy</label>
+            <div class="labeled_content">
+                {{results['IMPFUZZY']}}
+            </div>
+              <label>Xored Rich Hash</label>
+            <div class="labeled_content">
+                {{results['XRICH']}}
+            </div>
+              <label>Clear Rich Hash</label>
+            <div class="labeled_content">
+                {{results['CRICH']}}
+            </div>
+              <label>Murmur Hash</label>
+            <div class="labeled_content">
+                {{results['MINHASH']}}
+            </div>
+              <label>PEHASH</label>
+            <div class="labeled_content">
+                {{results['PEHASH']}}
+            </div>
+              <label>Machoc Hash</label>
+            <div class="d-flex p-2">
+                {{results['MACHOCH']}}
+            </div>
           </div>
         </div>
     </div>
 </div>
-</title>
-</head>
-<body>
-
-</body>
-</html>

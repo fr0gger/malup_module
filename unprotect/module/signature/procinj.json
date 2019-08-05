@@ -1,0 +1,20 @@
+{
+  "Process Doppelganging": [
+    { "CreateTransaction",
+      "CreateFileTransacted",
+      "WriteFile",
+      "RollbackTransaction",
+      "CreateProcess",
+      "CreateProcessParameters"
+    }
+  ],
+  "Process PROPagate": [
+    {
+      "SetProp",
+      "FindWindows",
+      "GetProp",
+      "UxSubclassInfo",
+      "CC32SubclassInfo"
+    }
+  ]
+ }
