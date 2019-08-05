@@ -138,32 +138,11 @@ class unprotect(ProcessingModule):
             dbgtable = False
 
 
-        self.results = {'EXPLOIT_MITIGATION':{
+        self.results = {
             'ASLR': aslr_check,
             'DEP': dep_check,
             'SEH': seh_check,
             'CFG': cfg_check},
-
-            'PACKER_DETECTION': {
-                'PEID': peid_detect,
-                'SECTIONS_ENTROPY': entropysec,
-                'EMPTY_SECTION': emptysection,
-                'EP_OUTSIDE': entryout,
-                'YARA_PACKER': matches,
-                'PE_SECTION': sectiontab
-            },
-
-            'ANTI_SANDBOX': {
-                'ANTI_SANBOX': trk,
-                'ANTIVM_INSTRUCTIONS': count,
-                'YARA_ANTI_SANDBOX': matches
-            },
-
-            'ANTI_DEBUGGING': {
-                'TLS_CALLBACK': tls,
-                'ANTI_DEBUGGING_API': dbgtable,
-                'YARA_ANTI_DEBUGGING': matchesdb
-            }
         }
 
         print self.results
