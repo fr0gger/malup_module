@@ -9,7 +9,7 @@ import re
 #import sys
 #import lief
 import pefile
-#import datetime
+import datetime
 
 #import json as JSON
 import module.config
