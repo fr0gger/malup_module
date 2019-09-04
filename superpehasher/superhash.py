@@ -2,7 +2,6 @@ from fame.core.module import ProcessingModule
 import superpehasher
 
 
-
 class superhash(ProcessingModule):
     # You have to give your module a name, and this name should be unique.
     name = "SuperPeHasher"
