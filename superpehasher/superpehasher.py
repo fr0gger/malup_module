@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """Super PE Hasher version 1.0 - Thomas Roccia - @fr0gger_
 
-This library is wrapper to use hash algorithm including the following:
+This library is a wrapper to use hash algorithm including the following:
 MD5, SHA1, SHA2, ImpHASH, IMPFUZZY, SSDEEP, Rich Header Hash, MINHASH, Machoc Hash, PEHASH
 
 """
